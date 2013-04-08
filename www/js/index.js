@@ -7,12 +7,12 @@ function recordAudio() {
     mediaRec = new Media(src,
         // success callback
         function() {
-            console.log("recordAudio():Audio Success");
+            alert("recordAudio():Audio Success");
         },
 
         // error callback
         function(err) {
-            console.log("recordAudio():Audio Error: "+ err.code);
+            alert("recordAudio():Audio Error: "+ err.code);
         });
 
     // Record audio
@@ -25,12 +25,12 @@ function stopAudio() {
 
 $("#recordbutton").click(function() {
 	if (started) {
+        $(this).text("Start");
 		stopAudio();
-		$(this).text("Start");
 	}
 	else {
+        $(this).text("Stop");
 		recordAudio();
-		$(this).text("Stop");
 	}
 
 	started = !started;
