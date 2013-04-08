@@ -25,11 +25,11 @@ function stopAudio() {
 
 $("#recordbutton").click(function() {
 	if (started) {
-        $(this).text("Start");
+        $(this).val("Start");
 		stopAudio();
 	}
 	else {
-        $(this).text("Stop");
+        $(this).val("Stop");
 		recordAudio();
 	}
 
